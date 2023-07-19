@@ -21,7 +21,7 @@ struct ContentView: View {
                     .overlay(Circle().stroke(Color.white, lineWidth: 5))
                 
                 VStack {
-                    Text("Hello, Shubham!")
+                    Text("Hello, AlgoMatrix!")
                         .font(Font.custom("Pacifico-Regular", size: 40))
                         .bold()
                     .foregroundColor(.white)
@@ -29,7 +29,9 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 25))
                     Divider()
-                    InfoView()
+                    InfoView(text: "090 8134 3322", imageName: "phone.fill")
+                    InfoView(text: "itsalovelyday@iknow.com", imageName: "envelope.fill")
+                    
                 }
             }
             .padding()
@@ -40,16 +42,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct InfoView: View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 25).frame(height: 50)
-            .foregroundColor(.white)
-            .overlay(HStack {
-                Image(systemName: "phone.fill").foregroundColor(.green)
-                Text("+81 090 8199 7455")
-            })
     }
 }
