@@ -12,13 +12,25 @@ struct ContentView: View {
         ZStack {
             Color(red: 0.09, green: 0.63, blue: 0.52).edgesIgnoringSafeArea(.all)
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
+                Image("The-Legend-Of-Zelda-Breath-Of-The-Wild-Download-PNG-Image")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 300.0, height: 150.0)
+                    .clipShape(Circle())
                     .foregroundColor(.accentColor)
-                Text("Hello, Mari!")
-                    .font(Font.custom("Pacifico-Regular", size: 40))
-                    .bold()
+                    .overlay(Circle().stroke(Color.white, lineWidth: 5))
+                
+                VStack {
+                    Text("Hello, Shubham!")
+                        .font(Font.custom("Pacifico-Regular", size: 40))
+                        .bold()
                     .foregroundColor(.white)
+                    Text("iOS Developer")
+                        .foregroundColor(.white)
+                        .font(.system(size: 25))
+                    Divider()
+                    InfoView()
+                }
             }
             .padding()
         }
@@ -28,5 +40,16 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct InfoView: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 25).frame(height: 50)
+            .foregroundColor(.white)
+            .overlay(HStack {
+                Image(systemName: "phone.fill").foregroundColor(.green)
+                Text("+81 090 8199 7455")
+            })
     }
 }
